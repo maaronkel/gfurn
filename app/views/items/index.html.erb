@@ -1,19 +1,18 @@
-<p id="notice"><%= notice %></p>
+<main class="main">
+  <p id="notice"><%= notice %></p>
 
-<div class="form-container">
-<h1>Shop</h1>
-
-<table>
-
-  <tbody>
-    <% @items.each do |item| %>
-      <tr>
-        <td><%= item.title %></td>
-        <td><%= item.category %></td>
-        <td><%= item.price %></td>
-        <td><%= link_to 'Show', item %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-</div>
+  <div class="container">
+    <div class="container__item">
+      <% @items.each do |item| %>
+        <div class="container__item--info">
+          <div class="container__item--info--image">
+            <%= link_to image_tag(item.image, style:"width:100%"), item %>
+          </div>
+          <p><%= item.category %></p>
+          <p><%= item.title %></p>
+          <p><%= item.price %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</main>

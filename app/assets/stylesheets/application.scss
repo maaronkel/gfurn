@@ -13,21 +13,33 @@
  *= require_tree .
  *= require_self
  */
- 
+
 //  NAVBAR
  li {
      list-style: none;
+     text-decoration: none;
+     a {
+	color: #000000;
+	}
  }
 
+.main {
+	height: 100vh;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
 // FORMS - Log in/Sign up
- .form-container {
+ .container {
     height: 100vh;
-    width: 50%;
-    margin: auto;
+    width: 100%;
+    // margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: left;
+    background-color: red;
     .field {
         margin: 30px 0;
         .label {
@@ -46,8 +58,28 @@
         margin: 40px 0;
         width: 100%;
     }
+    &__form {
+	color: #000000
+    }
+    &__item {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	background-color: #d1b897;
+	width: 100%;
+	&--info {
+		display: flex;
+		flex-direction: column;
+		margin: 20px;
+		width: 200px;
+		&--image {
+			width: 600px;
+			height: auto;
+		}
+	}
+    }
  }
 
  .back {
-     margin-bottom: 60px;
+	margin-bottom: 60px;
  }
