@@ -20,6 +20,13 @@
 
   <div class="field">
     <div class="label">
+      <%= form.label :image %>
+    </div>
+    <%= form.file_field :image %>
+  </div>
+
+  <div class="field">
+    <div class="label">
       <%= form.label :description %>
     </div>
     <%= form.text_area :description %>

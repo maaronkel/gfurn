@@ -1,30 +1,24 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  # will make sure that an account who is not signed in and clicks post new item, they are routed to the sign up page
+  before_action :authenticate_account!, except: [:index, :show]
 
-  # GET /items
-  # GET /items.json
   def index
     @items = Item.all
   end
 
-  # GET /items/1
-  # GET /items/1.json
   def show
   end
 
-  # GET /items/new
   def new
-    @item = Item.new
+    @item = current_account.items.build
   end
 
-  # GET /items/1/edit
   def edit
   end
 
-  # POST /items
-  # POST /items.json
   def create
-    @item = Item.new(item_params)
+    @item = current_account.items.build(item_params)
 
     respond_to do |format|
       if @item.save
@@ -37,8 +31,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /items/1
-  # PATCH/PUT /items/1.json
   def update
     respond_to do |format|
       if @item.update(item_params)
@@ -51,8 +43,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  # DELETE /items/1
-  # DELETE /items/1.json
   def destroy
     @item.destroy
     respond_to do |format|
@@ -69,6 +59,6 @@ class ItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def item_params
-      params.require(:item).permit(:title, :description, :category, :price)
+      params.require(:item).permit(:title, :image, :description, :category, :price)
     end
 end

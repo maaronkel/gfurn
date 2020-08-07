@@ -29,12 +29,12 @@
     </div>
     <ul style="display:flex; flex-direction:row; align-items:center; justify-content:space-between">
         <% if account_signed_in? %>
-            <li style="margin: 0 10px"><%= link_to "Shop", items_path, class: "active" %></li>  
-            <li style="margin: 0 10px"><%= link_to "Sell", new_item_path, class: "active" %></li>
+            <li style="margin: 0 10px"><%= link_to "Shop", items_path %></li>  
+            <li style="margin: 0 10px"><%= link_to "Sell", new_item_path %></li>
             <li style="margin: 0 10px"><%= link_to "Account", edit_account_registration_path %></li>
         <% else %>
-            <li style="margin: 0 10px"><%= link_to "Shop", items_path, class: "active" %></li> 
-            <li style="margin: 0 10px"><%= link_to "Sell", new_account_session_path %></li>
+            <li style="margin: 0 10px"><%= link_to "Shop", items_path %></li> 
+            <li style="margin: 0 10px"><%= link_to "Sell", new_item_path %></li>
             <li style="margin: 0 10px"><%= link_to "Log In", new_account_session_path %></li>
             <li style="margin: 0 10px"><%= link_to "Sign Up", new_account_registration_path %></li>
         <% end %>
