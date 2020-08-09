@@ -1,7 +1,11 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   # will make sure that an account who is not signed in and clicks post new item, they are routed to the sign up page
-  before_action :authenticate_account!, except: [:index, :show]
+  before_action :authenticate_account!, except: [:index] #, :show]
+
+  before_action :initialize_session
+  before_action :increment_visit_count, only: [:index, :show]
+  before_action :load_cart
 
   def index
     @items = Item.all
@@ -51,7 +55,32 @@ class ItemsController < ApplicationController
     end
   end
 
+  def add_to_cart
+    id = params[:id].to_i
+    session[:cart] << id unless session[:cart].include?(id)
+    redirect_to root_path
+  end
+
+  def remove_from_cart
+    id = params[:id].to_i
+    session[:cart].delete(id)
+    redirect_to root_path
+  end
+
   private
+  def initialize_session
+    session[:visit_count] ||= 0 # initliaze visit count on first visit
+    session[:cart] ||= []
+  end
+
+  def load_cart
+    @cart = Item.find(session[:cart])
+  end
+
+  def increment_visit_count
+    session[:visit_count] += 1 # increment the count with each visit
+    @visit_count = session[:visit_count]
+  end
     # Use callbacks to share common setup or constraints between actions.
     def set_item
       @item = Item.find(params[:id])

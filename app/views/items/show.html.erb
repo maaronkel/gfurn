@@ -21,5 +21,11 @@
   <%= @item.price %>
 </p>
 
+<% if @cart.include?(@item) %>
+  <p><%= button_to 'Remove from Cart', remove_from_cart_path(@item), method: :delete %></p>
+<% else %>
+  <p><%= button_to 'Purchase', add_to_cart_path(@item.id), method: :post %></p>
+<% end %>
+
 <%= link_to 'Back', items_path %> |
 <%= link_to 'Edit', edit_item_path(@item) %>
