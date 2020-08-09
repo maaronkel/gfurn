@@ -14,10 +14,30 @@
  *= require_self
  */
 
+// RESET * and html
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; // make 1rem == 10px rather than 16px
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  transition: all ease-in-out 0.3s;
+  overflow-x: hidden;
+}
+
 //  NAVBAR
  li {
      list-style: none;
      text-decoration: none;
+     font-size: 3rem;
      a {
 	color: #000000;
 	}
@@ -30,7 +50,7 @@
 	grid-template-columns: 1fr;
 }
 
-// FORMS - Log in/Sign up
+// Containers
  .container {
     height: 100vh;
     width: 100%;
@@ -39,7 +59,7 @@
     flex-direction: column;
     align-items: center;
     text-align: left;
-    background-color: red;
+    font-size: 3rem;
     .field {
         margin: 30px 0;
         .label {
@@ -53,28 +73,36 @@
     .cancel_account {
         display: flex;
         flex-direction: column;
-        align-items: left;
+        align-items: center;
         text-align: left;
         margin: 40px 0;
         width: 100%;
     }
     &__form {
-	color: #000000
+	color: #000000;
+
     }
     &__item {
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: auto;
-	background-color: #d1b897;
 	width: 100%;
 	&--info {
 		display: flex;
 		flex-direction: column;
-		margin: 20px;
-		width: 200px;
+		margin: 0 0 100px 0;
+		border-bottom: 2px solid #c0c0c0;
 		&--image {
-			width: 600px;
+			width: 100%;
 			height: auto;
+		}
+		&--text {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: auto;
+			p {
+				margin: 10px 20px 20px 0px;
+			}
 		}
 	}
     }
