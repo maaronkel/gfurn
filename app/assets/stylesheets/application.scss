@@ -15,18 +15,18 @@
  */
 
 // RESET * and html
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+// *,
+// *::before,
+// *::after {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+// }
 
-html {
-  font-size: 62.5%; // make 1rem == 10px rather than 16px
-  font-family: 'Open Sans', sans-serif;
-}
+// html {
+//   font-size: 62.5%; // make 1rem == 10px rather than 16px
+//   font-family: 'Open Sans', sans-serif;
+// }
 
 body {
   transition: all ease-in-out 0.3s;
@@ -37,7 +37,6 @@ body {
  li {
      list-style: none;
      text-decoration: none;
-     font-size: 3rem;
      a {
 	color: #000000;
 	}
@@ -59,7 +58,6 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: left;
-    font-size: 3rem;
     .field {
         margin: 30px 0;
         .label {

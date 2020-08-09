@@ -15,7 +15,11 @@
     <%= render "layouts/nav/public" %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <p> You have visited this site <%= pluralize @visit_count, 'time'%>.</n>
+    <%
+=begin%>
+ <p> You have visited this site <%= pluralize @visit_count, 'time'%>.</n> 
+<%
+=end%>
     <%= yield %>
 
     <%

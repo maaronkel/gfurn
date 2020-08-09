@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_account!, except: [:index] #, :show]
 
   before_action :initialize_session
-  before_action :increment_visit_count, only: [:index, :show]
+  # before_action :increment_visit_count, only: [:index, :show]
   before_action :load_cart
 
   def index
@@ -58,13 +58,13 @@ class ItemsController < ApplicationController
   def add_to_cart
     id = params[:id].to_i
     session[:cart] << id unless session[:cart].include?(id)
-    redirect_to root_path
+    redirect_to items_url
   end
 
   def remove_from_cart
     id = params[:id].to_i
     session[:cart].delete(id)
-    redirect_to root_path
+    redirect_to items_url
   end
 
   private
@@ -77,10 +77,10 @@ class ItemsController < ApplicationController
     @cart = Item.find(session[:cart])
   end
 
-  def increment_visit_count
-    session[:visit_count] += 1 # increment the count with each visit
-    @visit_count = session[:visit_count]
-  end
+  # def increment_visit_count
+  #   session[:visit_count] += 1 # increment the count with each visit
+  #   @visit_count = session[:visit_count]
+  # end
     # Use callbacks to share common setup or constraints between actions.
     def set_item
       @item = Item.find(params[:id])
