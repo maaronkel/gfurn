@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   # will make sure that an account who is not signed in and clicks post new item, they are routed to the sign up page
-  before_action :authenticate_account!, except: [:index, :search] #, :show]
+  before_action :authenticate_account!, except: [:home, :index, :search] #, :show]
 
   before_action :initialize_session
   # before_action :increment_visit_count, only: [:index, :show]
