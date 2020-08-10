@@ -1,0 +1,22 @@
+<main class="main">
+  <p id="notice"><%= notice %></p>
+
+  <div class="container">
+    <h2>Featured Item</h2>
+    <div class="container__item">
+      <% @items[-1..-1].each do |item| %>
+        <div class="container__item--info">
+          <div class="container__item--info--image">
+            <%= link_to image_tag(item.image, style:"width:100%"), item %>
+          </div>
+          <div class="container__item--info--text">
+            <p><%= item.title %></p>
+            <p><%= item.category %></p>
+            <p>Price: <%= number_to_currency item.price %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <h2>Categories</h2>
+  </div>
+</main>

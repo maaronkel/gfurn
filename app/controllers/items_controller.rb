@@ -11,6 +11,10 @@ class ItemsController < ApplicationController
     @items = Item.all
   end
 
+  def home 
+    @items = Item.all
+  end
+
   def show
   end
 
