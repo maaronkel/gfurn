@@ -36,7 +36,7 @@
     <div class="label">
       <%= form.label :category %>
     </div>
-    <%= form.text_field :category %>
+    <%= form.select :category, ['Table', 'Desk', 'Chair', 'Couch', 'Lighting', 'Rug', 'Wall Hanging', 'Mirror', 'Other'], include_blank: true %>
   </div>
 
   <div class="field">
