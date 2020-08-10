@@ -55,4 +55,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # added gems
 gem 'devise'
+# Was getting errors when trying to get into the rails console - this is a quick fix
 gem 'irb', require: false
