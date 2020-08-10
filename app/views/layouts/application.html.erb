@@ -13,8 +13,7 @@
 
   <body>
     <%= render "layouts/nav/public" %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%= render 'layouts/alerts' %>
     <%= yield %>
 
     <%

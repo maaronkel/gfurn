@@ -19,11 +19,12 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    
   end
 
   def create
     @item = current_account.items.build(item_params)
-
+    @item.account = current_account
     respond_to do |format|
       if @item.save
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
