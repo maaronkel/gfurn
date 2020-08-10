@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>gFurniture</title>
+    <title>App</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -15,11 +15,6 @@
     <%= render "layouts/nav/public" %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%
-=begin%>
- <p> You have visited this site <%= pluralize @visit_count, 'time'%>.</n> 
-<%
-=end%>
     <%= yield %>
 
     <%

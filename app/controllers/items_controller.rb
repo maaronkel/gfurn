@@ -67,6 +67,9 @@ class ItemsController < ApplicationController
     redirect_to items_url
   end
 
+  def cart_session
+  end
+
   private
   def initialize_session
     session[:visit_count] ||= 0 # initliaze visit count on first visit

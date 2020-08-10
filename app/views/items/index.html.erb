@@ -1,16 +1,3 @@
-<details>
-  <summary>Cart</summary>
-  <ul>
-    <% if @cart.empty? %>
-      <p>No items in cart.</p>
-    <% else %>
-      <% @cart.each do |item| %>
-        <li><%= item.title %> - <%= link_to 'Remove from Cart', remove_from_cart_path(item.id), method: :delete %></li>
-      <% end %>
-    <% end %>
-  </ul>
-</details>
-
 <main class="main">
   <p id="notice"><%= notice %></p>
 

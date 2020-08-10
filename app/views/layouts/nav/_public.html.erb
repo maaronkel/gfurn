@@ -31,6 +31,7 @@
         <% if account_signed_in? %>
             <li style="margin: 0 10px"><%= link_to "Shop", items_path %></li>
             <li style="margin: 0 10px"><%= link_to "Sell", new_item_path %></li>
+            <li style="margin: 0 10px"><%= link_to "Cart", cart_session_path %></li>
             <li style="margin: 0 10px"><%= link_to "Account", edit_account_registration_path %></li>
         <% else %>
             <li style="margin: 0 10px"><%= link_to "Shop", items_path %></li>
