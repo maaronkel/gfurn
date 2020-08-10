@@ -1,50 +1,26 @@
-
- <nav class="navbar navbar-expand-md fixed-top bg-dark" style="background-color:#f0f0f0 !important">
-  <li style="margin: 0 20px 0 0"><%= link_to "CantThinkOfANameYet", root_path %></li>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <li class="navbar-brand "style="margin: 0 20px 0 0"><%= link_to "cantthinkofanameyet", root_path %></li>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarCollapse">
-    <ul class="navbar-nav mr-auto">
-      <form class="form-inline mt-2 mt-md-0" action="/search">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search by Category" aria-label="Search" name="q">
-      </form>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <form class="form-inline my-2 my-lg-0" action="/search">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <ul class="navbar-nav ml-auto">
       <% if account_signed_in? %>
-        <li style="margin: 10px"><%= link_to "Shop", items_path %></li>
-        <li style="margin: 10px"><%= link_to "Sell", new_item_path %></li>
-        <li style="margin: 10px"><%= link_to "Cart", cart_session_path %></li>
-        <li style="margin: 10px"><%= link_to "Account", edit_account_registration_path %></li>
+        <li style="margin: 10px 30px 10px 0"><%= link_to "Shop", items_path %></li>
+        <li style="margin: 10px 30px 10px 0"><%= link_to "Sell", new_item_path %></li>
+        <li style="margin: 10px 30px 10px 0"><%= link_to "Cart", cart_session_path %></li>
+        <li style="margin: 10px 30px 10px 0"><%= link_to "Account", edit_account_registration_path %></li>
       <% else %>
-        <li style="margin: 10px"><%= link_to "Shop", items_path %></li>
-        <li style="margin: 10px"><%= link_to "Sell", new_item_path %></li>
-        <li style="margin: 10px"><%= link_to "Log In", new_account_session_path %></li>
-        <li style="margin: 10px"><%= link_to "Sign Up", new_account_registration_path %></li>
+        <li style="margin: 10px 30px 10px 0"><%= link_to "Shop", items_path %></li>
+        <li style="margin: 10px 30px 10px 0"><%= link_to "Sell", new_item_path %></li>
+        <li style="margin: 10px 30px 10px 0"><%= link_to "Log In", new_account_session_path %></li>
+        <li style="margin: 10px 30px 10px 0"><%= link_to "Sign Up", new_account_registration_path %></li>
       <% end %>
     </ul>
   </div>
 </nav>
-
-
-<%
-=begin%>
- <div style="padding: 20px; display:flex; flex-direction:row; align-items:center; justify-content:space-around">
-    <div style="font-size:26px">
-        <%= link_to "CantThinkOfANameYet", root_path %>
-    </div>
-    <ul style="display:flex; flex-direction:row; align-items:center; justify-content:space-between">
-        <% if account_signed_in? %>
-            <li style="margin: 0 10px"><%= link_to "Shop", items_path %></li>
-            <li style="margin: 0 10px"><%= link_to "Sell", new_item_path %></li>
-            <li style="margin: 0 10px"><%= link_to "Cart", cart_session_path %></li>
-            <li style="margin: 0 10px"><%= link_to "Account", edit_account_registration_path %></li>
-        <% else %>
-            <li style="margin: 0 10px"><%= link_to "Shop", items_path %></li>
-            <li style="margin: 0 10px"><%= link_to "Sell", new_item_path %></li>
-            <li style="margin: 0 10px"><%= link_to "Log In", new_account_session_path %></li>
-            <li style="margin: 0 10px"><%= link_to "Sign Up", new_account_registration_path %></li>
-        <% end %>
-    </ul>
-</div> 
-<%
-=end%>
