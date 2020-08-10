@@ -1,3 +1,21 @@
-<h2>Seach Results</h2>
+<main class="main">
+  <p id="notice"><%= notice %></p>
 
-<%= render @items %>
+  <div class="container">
+    <h2>Search Results</h2>
+    <div class="container__item">
+      <% @items.each do |item| %>
+        <div class="container__item--info">
+          <div class="container__item--info--image">
+            <%= link_to image_tag(item.image, style:"width:100%"), item %>
+          </div>
+          <div class="container__item--info--text">
+            <p><%= item.title %></p>
+            <p><%= item.category %></p>
+            <p>Price: <%= number_to_currency item.price %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</main>
