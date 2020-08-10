@@ -70,6 +70,10 @@ class ItemsController < ApplicationController
   def cart_session
   end
 
+  def search
+    @items = Item.where("title LIKE ?", "%" + params[:q] + "%")
+  end
+
   private
   def initialize_session
     session[:visit_count] ||= 0 # initliaze visit count on first visit
