@@ -1,4 +1,16 @@
 <div class="container container__form">
+<%
+=begin%>
+ 
+  <h3>My Listings</h3>
+  <% @items.each do |item| %>
+    <% if item == item.account %>
+      <p><%= item.title %></p>
+      <p>Price: <%= number_to_currency item.price %></p>
+    <% end %>
+  <% end %> 
+<%
+=end%>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
@@ -40,4 +52,9 @@
 
     <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
   </div>
+
+  <div>
+    <li><%= link_to "Sign Out", destroy_account_session_path, method: :delete %></li>
+  </div>
+
 </div>
