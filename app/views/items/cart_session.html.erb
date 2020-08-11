@@ -4,7 +4,7 @@
       <p>There no items in your cart.</p>
     <% else %>
       <% @cart.each do |item| %>
-        <li><%= link_to item.title, item %> - <%= number_to_currency item.price %> - <%= link_to 'Remove from Cart', remove_from_cart_path(item.id), method: :delete %></li>
+        <li><%= link_to image_tag(item.image, style:"width:50%"), item %> <%= link_to item.title, item %> - <%= number_to_currency item.price %> - <%= link_to 'Remove from Cart', remove_from_cart_path(item.id), method: :delete %></li>
       <% end %>
     <% end %>
   </ul>
