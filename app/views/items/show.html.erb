@@ -21,6 +21,8 @@
   <%= number_to_currency @item.price %>
 </p>
 
+<%= link_to 'Add to Wishlist', account_wishlist_items_update_path(item: @item), id:'wishlist_link' %>
+
 <% if current_account == @item.account %>
   <%= link_to 'Back', items_path %> |
   <%= link_to 'Edit Listing', edit_item_path(@item) %>

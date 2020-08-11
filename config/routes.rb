@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'account_wishlist_items/update'
   resources :items do
     collection do
       get :search

@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_07_062127) do
+ActiveRecord::Schema.define(version: 2020_08_11_031605) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "account_wishlists", force: :cascade do |t|
+    t.bigint "item_id", null: false
+    t.bigint "account_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["account_id"], name: "index_account_wishlists_on_account_id"
+    t.index ["item_id"], name: "index_account_wishlists_on_item_id"
+  end
 
   create_table "accounts", force: :cascade do |t|
     t.string "first_name", default: "", null: false
@@ -62,5 +71,14 @@ ActiveRecord::Schema.define(version: 2020_08_07_062127) do
     t.index ["account_id"], name: "index_items_on_account_id"
   end
 
+  create_table "wishlists", force: :cascade do |t|
+    t.integer "item_id"
+    t.integer "account_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "account_wishlists", "accounts"
+  add_foreign_key "account_wishlists", "items"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
 end
