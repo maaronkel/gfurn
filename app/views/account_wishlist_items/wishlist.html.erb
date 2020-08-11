@@ -1,9 +1,13 @@
 <div class="container container__form">
-  <ul>
-  <li>
-    <% current_account.account_wishlist.each do |wishlist| %>
-      <%= link_to image_tag(wishlist.item.image, style:"width:50%"), wishlist.item %> <%= link_to wishlist.item.title, wishlist.item %> - <%= number_to_currency wishlist.item.price %>
-    <% end %>
-  </li>
+  <ul class="wishlist">
+    <li class="wishlist__item">
+      <% if current_account.account_wishlist.empty? %>
+        <p>There no items in your wishlist.</p>
+      <% else %>
+        <% current_account.account_wishlist.each do |wishlist| %>
+          <%= link_to image_tag(wishlist.item.image, style:"width:30%"), wishlist.item, class:"wishlist__item--image" %> <%= wishlist.item.title %>  |  <%= number_to_currency wishlist.item.price %>
+        <% end %>
+      <% end %>
+    </li>
   </ul>
 </div>

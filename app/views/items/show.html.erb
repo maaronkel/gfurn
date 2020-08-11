@@ -1,39 +1,39 @@
 <p id="notice"><%= notice %></p>
+<div class="container__s">
+  <div style="width:200px width: auto; margin-top:-60px">
+    <%= image_tag(@item.image, style:"width:100%") %>
+  </div>
+  <div class="container__show">
+    <p class="container__show--title"><%= @item.title %></p>
 
-<div style="width:400px, height:auto;">
-  <%= image_tag(@item.image, style:"width:100%") %>
-</div>
+    <p class="container__show--cat">
+    <%= @item.category %>
+    </p>
 
-<p><%= @item.title %></p>
+    <p class="container__show--price" >
+    <%= number_to_currency @item.price %>
+    </p>
+  </div>
 
-<p>
-  <strong>Description</strong>
-  <%= @item.description %>
-</p>
 
-<p>
-  <strong>Type:</strong>
-  <%= @item.category %>
-</p>
+  <p class="container__s--dec">
+    <%= @item.description %>
+  </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= number_to_currency @item.price %>
-</p>
-
-<% if current_account != @item.account %>
-  <p><%= link_to wishlist_text, account_wishlist_items_update_path(item: @item), id:'wishlist_link', remote: true %></p>
-<% end %>
-
-<% if current_account == @item.account %>
-  <%= link_to 'Back', items_path %> |
-  <%= link_to 'Edit Listing', edit_item_path(@item) %>
-<% else %>
-  <% if @cart.include?(@item) %>
-    <p><%= button_to 'Remove from Cart', remove_from_cart_path(@item), method: :delete %></p>
-  <% else %>
-    <p><%= button_to 'Purchase', add_to_cart_path(@item.id), method: :post %></p>
+  <% if current_account != @item.account %>
+    <p class="container__s--wish" ><%= link_to wishlist_text, account_wishlist_items_update_path(item: @item), id:'wishlist_link', remote: true %></p>
   <% end %>
-  <%= link_to 'Back', items_path %> 
-<% end %>
 
+  <% if current_account == @item.account %>
+    <p class="container__s--link"><%= link_to 'Back', items_path %></p>
+    <p class="container__s--linke"><%= link_to 'Edit Listing', edit_item_path(@item) %></p>
+  <% else %>
+    <% if @cart.include?(@item) %>
+      <p class="container__s--cart"><%= button_to 'Remove from Cart', remove_from_cart_path(@item), method: :delete %></p>
+    <% else %>
+      <p class="container__s--cart"><%= button_to 'Purchase', add_to_cart_path(@item.id), method: :post %></p>
+    <% end %>
+    <p class="container__s--link"><%= link_to 'Back', items_path %></p>
+  <% end %>
+  </div>
+</div>

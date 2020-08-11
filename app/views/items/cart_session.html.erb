@@ -1,10 +1,10 @@
 <div class="container container__form">
-  <ul>
+  <ul class="wishlist">
     <% if @cart.empty? %>
       <p>There no items in your cart.</p>
     <% else %>
       <% @cart.each do |item| %>
-        <li><%= link_to image_tag(item.image, style:"width:50%"), item %> <%= link_to item.title, item %> - <%= number_to_currency item.price %> - <%= link_to 'Remove from Cart', remove_from_cart_path(item.id), method: :delete %></li>
+        <li class="wishlist__item"><%= link_to image_tag(item.image, style:"width:30%"), item, class:"wishlist__item--image" %> <%= link_to item.title, item %>  |  <%= number_to_currency item.price %>  |  <%= link_to 'Remove from Cart', remove_from_cart_path(item.id), method: :delete, class:"wishlist__item--text" %></li>
       <% end %>
     <% end %>
   </ul>
