@@ -1,0 +1,9 @@
+<div class="container container__form">
+  <ul>
+  <li>
+    <% current_account.account_wishlist.each do |wishlist| %>
+      <%= link_to wishlist.item.title, wishlist.item %>
+    <% end %>
+  </li>
+  </ul>
+</div>

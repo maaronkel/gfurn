@@ -15,4 +15,7 @@ class AccountWishlistItemsController < ApplicationController
       format.js {}
     end
   end
+
+  def wishlist
+  end
 end

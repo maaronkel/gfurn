@@ -16,6 +16,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @wishlist_exists = AccountWishlist.where(item: @item, account: current_account) == [] ? false : true
   end
 
   def new
