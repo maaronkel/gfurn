@@ -58,3 +58,4 @@ gem 'devise'
 # Was getting errors when trying to get into the rails console - this is a quick fix
 gem 'irb', require: false
 gem 'jquery-rails'
+gem "aws-sdk-s3", require: false
