@@ -4,7 +4,6 @@ class ItemsController < ApplicationController
   before_action :authenticate_account!, except: [:home, :index, :search] #, :show]
 
   before_action :initialize_session
-  # before_action :increment_visit_count, only: [:index, :show]
   before_action :load_cart
 
   def index
@@ -16,6 +15,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    # needed for wishlist
     @wishlist_exists = AccountWishlist.where(item: @item, account: current_account) == [] ? false : true
   end
 
@@ -76,6 +76,7 @@ class ItemsController < ApplicationController
   def cart_session
   end
 
+  # doesnt work atm
   def search
     if params[:search].blank?
       @items = Item.all
@@ -94,10 +95,6 @@ class ItemsController < ApplicationController
     @cart = Item.find(session[:cart])
   end
 
-  # def increment_visit_count
-  #   session[:visit_count] += 1 # increment the count with each visit
-  #   @visit_count = session[:visit_count]
-  # end
     # Use callbacks to share common setup or constraints between actions.
     def set_item
       @item = Item.find(params[:id])
