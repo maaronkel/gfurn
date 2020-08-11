@@ -2,7 +2,7 @@
   <ul>
   <li>
     <% current_account.account_wishlist.each do |wishlist| %>
-      <%= link_to wishlist.item.title, wishlist.item %>
+      <%= link_to wishlist.item.title, wishlist.item %> - <%= number_to_currency wishlist.item.price %>
     <% end %>
   </li>
   </ul>
