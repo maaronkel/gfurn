@@ -5,4 +5,7 @@ class Account < ApplicationRecord
          :recoverable, :rememberable, :validatable
   # has_many :properties
   has_many :items
+  # Wishlist
+  has_many :wishlist_items
+  has_many :wishlists, through: :wishlist_items, source: :item
 end

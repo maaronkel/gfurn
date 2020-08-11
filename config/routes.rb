@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     collection do
       get :search
     end
+    put :wishlist, on: :member
   end
   devise_for :accounts
 
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   delete 'items/remove_from_cart/:id', to: 'items#remove_from_cart', as: 'remove_from_cart'
 
   get '/cart_session', to: 'items#cart_session'
+  get '/account_wishlist', to: 'items#account_wishlist'
 
   # root 'public#main'
   root 'items#home'

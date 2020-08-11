@@ -83,6 +83,27 @@ class ItemsController < ApplicationController
     end
   end
 
+  # Add and remove wishlist items
+  def wishlist
+    type = params[:type]
+    if type == "add"
+      current_account.wishlists << @item
+      redirect_to account_wishlist_path #, notice: 'Favorited #{@item.title}'
+
+    elsif type == "remove"
+      current_user.wishlists.delete(@item)
+      redirect_to account_wishlist_path #, notice: 'Unfavorited #{@item.title}'
+
+    else
+      # Type missing, nothing happens
+      redirect_to account_wishlist_path, notice: 'Nothing happened.'
+    end
+  end
+
+  def account_wishlist
+    @wishlist_items = current_account.items
+  end
+
   private
   def initialize_session
     session[:visit_count] ||= 0 # initliaze visit count on first visit
