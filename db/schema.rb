@@ -71,13 +71,6 @@ ActiveRecord::Schema.define(version: 2020_08_11_031605) do
     t.index ["account_id"], name: "index_items_on_account_id"
   end
 
-  create_table "wishlists", force: :cascade do |t|
-    t.integer "item_id"
-    t.integer "account_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   add_foreign_key "account_wishlists", "accounts"
   add_foreign_key "account_wishlists", "items"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
