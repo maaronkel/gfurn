@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'account_wishlist_items/update'
   resources :items do
     collection do
       get :search
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   delete 'items/remove_from_cart/:id', to: 'items#remove_from_cart', as: 'remove_from_cart'
 
   get '/cart_session', to: 'items#cart_session'
+  get '/wishlist', to: 'account_wishlist_items#wishlist'
 
   # root 'public#main'
   root 'items#home'
