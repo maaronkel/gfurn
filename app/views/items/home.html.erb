@@ -4,7 +4,7 @@
   <div class="container">
     <h2 style="margin-bottom: 20px">Featured Item</h2>
     <div class="container__item">
-      <% @items[-1..-1].each do |item| %>
+      <% @items.each do |item| %>
         <div class="container__item--info">
           <div class="container__item--info--image">
             <%= link_to image_tag(item.image, style:"width:100%"), item %>
