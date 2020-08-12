@@ -2,7 +2,7 @@
 
 ## gfurn
 
-[Website](https://peaceful-river-62496.herokuapp.com/)
+[Website](https://gfurn.herokuapp.com/)
 
 [Github](https://github.com/maaronkel/gfurn)
 
@@ -12,7 +12,7 @@ I wanted to create an app similar to [Grailed](http://grailed.com), a peer to pe
 
 ### **Problem**
 
-There isn't a platform where you can easily find these certain items online. You'll be extremely lucky to find something on a site like eBay, so my app will simplify the process for those with an interest in unique contemporary or vintage furniture and houseware. 
+There isn't a platform where you can easily find these certain items online. You'll be extremely lucky to find something on a site like eBay, so my app will simplify the process for those with an interest in unique contemporary or vintage furniture and houseware.
 
 Therefore, those that don't want to spend hundreds on importing fees alone when importing an item from overseas from unreliable and unrecognisable websites, my app will help make it more accessible for buyers and sellers in this niche market in Australia.
 
@@ -20,7 +20,7 @@ Therefore, those that don't want to spend hundreds on importing fees alone when 
 
 #### **Purpose**
 
-The mission of this marketplace is to bridge the gap between people who want to part with a rare or unique piece of furniture or any other houseware including lighting and accessories, and an interested buyer. 
+The mission of this marketplace is to bridge the gap between people who want to part with a rare or unique piece of furniture or any other houseware including lighting and accessories, and an interested buyer.
 
 #### **Functionality / Features**
 
@@ -132,7 +132,7 @@ Items: A User with an Account can easily post and Item, inputing the price, cate
 
 - Bootstrap
 
-Bootstrap-sass a ruby gem that is a SASS version of the CSS framework Bootstrap. It is a free and open source framework for components like navigation and forms. I used the template components for the forms and navbar, yet manually did the rest of the styling using SCSS for everything else on the app. 
+Bootstrap-sass a ruby gem that is a SASS version of the CSS framework Bootstrap. It is a free and open source framework for components like navigation and forms. I used the template components for the forms and navbar, yet manually did the rest of the styling using SCSS for everything else on the app.
 
 - Devise
 
@@ -179,8 +179,3 @@ I have labelled all cards in each list, the items that are compulsory have "requ
 This is a screenshot of my Trello board near completion of the assignment.
 
 ![Sitemap](docs/trello.png)
-
-
-
-
-
